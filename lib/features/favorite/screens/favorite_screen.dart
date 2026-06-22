@@ -7,6 +7,7 @@ import 'package:movie_track/features/favorite/cubit/favorite/favorite_cubit.dart
 import 'package:movie_track/features/favorite/widgets/favorite_card.dart';
 import 'package:movie_track/features/favorite/widgets/remove_favorite_modal.dart';
 import 'package:movie_track/core/theme/export.dart';
+import 'package:movie_track/core/widgets/app_drawer.dart';
 import 'package:movie_track/core/widgets/state_view.dart';
 
 /// "My Favorites" screen. Reads the shared FavoriteCubit provided at app root.
@@ -17,10 +18,13 @@ class FavoriteScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.background,
+      drawer: const AppDrawer(),
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(PhosphorIconsBold.list),
-          onPressed: () {},
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(PhosphorIconsBold.list),
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ),
         ),
         title: const Text('My Favorites'),
         actions: [

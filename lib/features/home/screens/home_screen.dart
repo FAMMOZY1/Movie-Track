@@ -8,6 +8,7 @@ import 'package:movie_track/core/constants/app_constants.dart';
 import 'package:movie_track/core/enum/network_status.dart';
 import 'package:movie_track/core/models/movie.dart';
 import 'package:movie_track/core/theme/export.dart';
+import 'package:movie_track/core/widgets/app_drawer.dart';
 import 'package:movie_track/core/widgets/poster_card.dart';
 import 'package:movie_track/core/widgets/section_header.dart';
 import 'package:movie_track/core/widgets/state_view.dart';
@@ -36,11 +37,14 @@ class _HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.background,
+      drawer: const AppDrawer(),
       appBar: AppBar(
-        leading: IconButton(
-          icon: const Icon(PhosphorIconsBold.list),
-          color: AppColor.onSurface,
-          onPressed: () {},
+        leading: Builder(
+          builder: (context) => IconButton(
+            icon: const Icon(PhosphorIconsBold.list),
+            color: AppColor.onSurface,
+            onPressed: () => Scaffold.of(context).openDrawer(),
+          ),
         ),
         title: const Text('MovieTrack'),
         actions: [
