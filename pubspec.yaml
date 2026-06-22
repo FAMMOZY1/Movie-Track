@@ -1,0 +1,74 @@
+name: movie_track
+description: MovieTrack - Find and track your favorite movies
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  bloc: ^8.1.4
+  flutter_bloc: ^8.1.6
+  equatable: ^2.0.7
+
+  # HTTP Client
+  dio: ^5.4.3+1
+
+  # Code Generation
+  freezed_annotation: ^2.4.1
+  json_annotation: ^4.9.0
+
+  # Environment Variables
+  flutter_dotenv: ^5.1.0
+
+  # Navigation
+  go_router: ^14.2.0
+
+  # Icons
+  phosphor_flutter: ^2.1.0
+
+  # Forms
+  flutter_form_builder: ^9.7.0
+  form_builder_validators: ^11.0.0
+
+  # Image
+  cached_network_image: ^3.3.1
+
+  # Loading Skeleton
+  skeletonizer: ^1.4.2
+
+  # Share
+  share_plus: ^10.0.2
+
+  # Local storage (Favorites JSON file)
+  path_provider: ^2.1.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  build_runner: ^2.4.12
+  freezed: ^2.5.2
+  json_serializable: ^6.8.0
+  flutter_launcher_icons: ^0.14.1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - .env
+    - assets/logo_Movie.png
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: "assets/app_icon.png"
+  min_sdk_android: 21
+  adaptive_icon_background: "#101415"
+  adaptive_icon_foreground: "assets/app_icon.png"
+  web:
+    generate: true
+    image_path: "assets/app_icon.png"
